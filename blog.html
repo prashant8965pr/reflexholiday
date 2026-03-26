@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Reflex Holidays | Kashmir Travel Guide</title>
+    <meta name="description" content="Kashmir travel guides, temple tips, Gulmarg snow guide and houseboat life — the Reflex Holidays Kashmir Journal.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Navbar */
+        .navbar-scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+        .navbar-scrolled .nav-link { color: #1f2937 !important; }
+        .navbar-scrolled .nav-logo  { color: #1f2937 !important; }
+
+        /* Mobile menu */
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* Hero */
+        .blog-hero {
+            min-height: 60vh;
+            background: center/cover no-repeat;
+        }
+        @media (max-width: 640px) { .blog-hero { min-height: 50vh; } }
+
+        /* Article prose styles */
+        .prose h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 2rem 0 0.75rem;
+        }
+        .prose h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .prose p {
+            color: #4b5563;
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+        .prose p.lead {
+            font-size: 1.1rem;
+            color: #374151;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        .prose ul {
+            list-style: none;
+            margin: 0.75rem 0 1.25rem 0;
+        }
+        .prose ul li {
+            color: #4b5563;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+        .prose ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-weight: 700;
+        }
+        .prose strong { color: #111827; font-weight: 600; }
+
+        /* Skeleton loader */
+        .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; }
+        @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+        /* Related cards */
+        .related-card:hover img { transform: scale(1.05); }
+        .related-card img { transition: transform 0.4s ease; }
+
+        /* Fade up */
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-amber-500 text-xl sm:text-2xl"></i>
+                    <span class="nav-logo text-lg sm:text-2xl font-bold text-gray-900 font-playfair sm:tracking-wide">Reflex Holidays</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link text-gray-700 hover:text-amber-500 transition font-medium">Home</a>
+                    <a href="index.html#destinations" class="nav-link text-gray-700 hover:text-amber-500 transition font-medium">Destinations</a>
+                    <a href="index.html#packages" class="nav-link text-gray-700 hover:text-amber-500 transition font-medium">Packages</a>
+                    <a href="index.html#contact" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg">
+                        Book Now
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-[min(288px,85vw)] h-full bg-white z-[60] shadow-2xl overflow-y-auto">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fas fa-mountain text-amber-500 text-xl"></i>
+                <span class="text-lg font-bold text-gray-900 font-playfair">Reflex Holidays</span>
+            </a>
+            <button id="closeMobileMenu" class="text-2xl text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="px-6 py-6 space-y-2">
+            <a href="index.html" class="flex items-center space-x-3 text-gray-700 font-medium hover:text-amber-500 hover:bg-amber-50 px-3 py-3 rounded-xl transition">
+                <i class="fas fa-home w-5 text-amber-400"></i><span>Home</span>
+            </a>
+            <a href="index.html#destinations" class="flex items-center space-x-3 text-gray-700 font-medium hover:text-amber-500 hover:bg-amber-50 px-3 py-3 rounded-xl transition">
+                <i class="fas fa-map-marker-alt w-5 text-amber-400"></i><span>Destinations</span>
+            </a>
+            <a href="index.html#packages" class="flex items-center space-x-3 text-gray-700 font-medium hover:text-amber-500 hover:bg-amber-50 px-3 py-3 rounded-xl transition">
+                <i class="fas fa-suitcase w-5 text-amber-400"></i><span>Packages</span>
+            </a>
+            <a href="index.html#contact" class="flex items-center space-x-3 text-gray-700 font-medium hover:text-amber-500 hover:bg-amber-50 px-3 py-3 rounded-xl transition">
+                <i class="fas fa-envelope w-5 text-amber-400"></i><span>Contact</span>
+            </a>
+        </div>
+        <div class="px-6 pt-2 pb-6 space-y-3 border-t border-gray-100 mt-2">
+            <a href="https://wa.me/919797018473" target="_blank" class="flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-full font-bold transition">
+                <i class="fab fa-whatsapp text-lg"></i><span>WhatsApp Us</span>
+            </a>
+        </div>
+    </div>
+    <div id="mobileOverlay" class="fixed inset-0 bg-black/50 z-[55] hidden"></div>
+
+    <!-- Hero -->
+    <section id="blogHero" class="blog-hero relative flex items-end justify-center pt-16">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20"></div>
+        <div class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 pb-10 pt-20 sm:pt-28">
+            <!-- Breadcrumb -->
+            <nav class="flex items-center space-x-2 text-white/60 text-sm mb-4">
+                <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="index.html#blog" class="hover:text-amber-400 transition">Blog</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span id="breadcrumbTitle" class="text-white truncate max-w-xs">Article</span>
+            </nav>
+            <div id="heroCategoryBadge" class="inline-block bg-amber-500 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4">Loading…</div>
+            <h1 id="heroTitle" class="text-2xl sm:text-4xl md:text-5xl font-bold text-white font-playfair leading-tight mb-4">
+                Loading article…
+            </h1>
+            <div class="flex flex-wrap items-center gap-4 text-white/70 text-sm">
+                <span><i class="far fa-calendar mr-2"></i><span id="heroDate">—</span></span>
+                <span><i class="far fa-clock mr-2"></i><span id="heroReadTime">—</span> min read</span>
+                <span><i class="fas fa-user mr-2"></i><span id="heroAuthor">—</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="flex flex-col lg:flex-row gap-10">
+
+            <!-- Article body -->
+            <article class="flex-1 min-w-0">
+                <div id="articleBody" class="bg-white rounded-2xl p-6 sm:p-10 shadow-md prose">
+                    <!-- skeleton -->
+                    <div class="skeleton h-5 w-3/4 mb-4"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-5/6 mb-6"></div>
+                    <div class="skeleton h-5 w-1/2 mb-4"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-4/5 mb-6"></div>
+                    <div class="skeleton h-5 w-2/3 mb-4"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-3/4 mb-2"></div>
+                </div>
+
+                <!-- Share -->
+                <div class="mt-8 bg-white rounded-2xl p-6 shadow-md flex flex-wrap items-center gap-4">
+                    <span class="text-gray-700 font-semibold">Share this article:</span>
+                    <a id="shareWA" href="#" target="_blank" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition">
+                        <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                    </a>
+                    <a id="shareFB" href="#" target="_blank" class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">
+                        <i class="fab fa-facebook"></i><span>Facebook</span>
+                    </a>
+                    <button onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'))" class="flex items-center space-x-2 border border-gray-200 hover:border-amber-400 text-gray-600 px-5 py-2 rounded-full text-sm font-semibold transition">
+                        <i class="fas fa-link"></i><span>Copy Link</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="lg:w-80 flex-shrink-0 space-y-6">
+
+                <!-- CTA card -->
+                <div class="bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl p-6 text-white shadow-xl">
+                    <i class="fas fa-mountain text-3xl mb-3 opacity-80"></i>
+                    <h3 class="text-xl font-bold font-playfair mb-2">Plan Your Kashmir Trip</h3>
+                    <p class="text-white/80 text-sm mb-5 leading-relaxed">Custom Kashmir packages starting ₹9,999/person. Temple tours, valley explorer, houseboat & more.</p>
+                    <a href="index.html#packages" class="block w-full text-center bg-white text-amber-600 font-bold py-3 rounded-xl hover:bg-amber-50 transition mb-3">View Packages</a>
+                    <a href="https://wa.me/919797018473" target="_blank" class="block w-full text-center bg-white/10 border border-white/30 text-white font-semibold py-3 rounded-xl hover:bg-white/20 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+                    </a>
+                </div>
+
+                <!-- Quick contact -->
+                <div class="bg-white rounded-2xl p-6 shadow-md">
+                    <h3 class="font-bold text-gray-900 mb-4 text-lg">Talk to an Expert</h3>
+                    <p class="text-gray-500 text-sm mb-4">Our Kashmir travel experts are available every day 8 AM – 9 PM.</p>
+                    <a href="tel:+919797018473" class="flex items-center space-x-3 text-amber-600 font-bold text-lg hover:text-amber-700 transition">
+                        <i class="fas fa-phone-alt bg-amber-100 p-2 rounded-full text-base"></i>
+                        <span>+91-9797018473</span>
+                    </a>
+                </div>
+
+                <!-- Related posts -->
+                <div class="bg-white rounded-2xl p-6 shadow-md">
+                    <h3 class="font-bold text-gray-900 mb-5 text-lg font-playfair">More from our Journal</h3>
+                    <div id="relatedPosts" class="space-y-4">
+                        <div class="skeleton h-16 rounded-xl"></div>
+                        <div class="skeleton h-16 rounded-xl"></div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-mountain text-amber-500 text-2xl"></i>
+                        <span class="text-2xl font-bold font-playfair">Reflex Holidays</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">Govt. registered tour operator based in Srinagar, J&K. Specialising in temple circuits, valley packages, houseboat stays & custom Kashmir tours.</p>
+                    <div class="flex space-x-3">
+                        <a href="https://wa.me/919797018473" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+919797018473" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-500 transition"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="index.html#destinations" class="hover:text-amber-400 transition">Destinations</a></li>
+                        <li><a href="index.html#packages" class="hover:text-amber-400 transition">Tour Packages</a></li>
+                        <li><a href="index.html#contact" class="hover:text-amber-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <p><i class="fas fa-phone text-amber-500 mr-3"></i><a href="tel:+919797018473" class="hover:text-amber-400">+91-9797018473</a></p>
+                        <p><i class="fas fa-map-marker-alt text-amber-500 mr-3"></i>Srinagar, Jammu & Kashmir</p>
+                        <p><i class="fas fa-envelope text-amber-500 mr-3"></i>info@reflexholidays.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <p>© 2025 Reflex Holidays. All rights reserved. | Govt. Registered Tour Operator, J&K Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── API ───────────────────────────────────────────────────────────────────
+        const API_BASE = (() => {
+            const h = window.location.hostname;
+            if (h === 'localhost' || h === '127.0.0.1') return 'http://localhost:8000/api';
+            // ← REPLACE with your Railway/Render backend URL after deploy
+            return 'https://reflexholidays-production.up.railway.app/api';
+        })();
+
+        const postSlug = new URLSearchParams(window.location.search).get('slug') || '';
+
+        // ── Mobile menu ───────────────────────────────────────────────────────────
+        const mobileMenu    = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            mobileOverlay.classList.remove('hidden');
+        });
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            mobileOverlay.classList.add('hidden');
+        }
+        document.getElementById('closeMobileMenu').addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
+
+        // ── Navbar scroll ─────────────────────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('navbar-scrolled', window.scrollY > 20);
+        });
+
+        // ── Fade-up observer ──────────────────────────────────────────────────────
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ── Load post ─────────────────────────────────────────────────────────────
+        async function loadPost() {
+            if (!postSlug) { showError('No article specified.'); return; }
+            try {
+                const r = await fetch(`${API_BASE}/blog/${postSlug}`);
+                if (!r.ok) { showError('Article not found.'); return; }
+                const post = await r.json();
+                applyPost(post);
+                loadRelated(postSlug);
+            } catch {
+                showError('Could not load article. Please check your connection.');
+            }
+        }
+
+        function applyPost(post) {
+            // Page title
+            document.title = `${post.title} - Reflex Holidays`;
+
+            // Hero background
+            if (post.image_url) {
+                document.getElementById('blogHero').style.backgroundImage = `url('${post.image_url}')`;
+            }
+
+            // Breadcrumb
+            const bc = document.getElementById('breadcrumbTitle');
+            if (bc) bc.textContent = post.title;
+
+            // Category badge
+            const badge = document.getElementById('heroCategoryBadge');
+            if (badge) {
+                badge.textContent = post.category || 'Blog';
+                badge.className = `inline-block ${post.category_color || 'bg-amber-500'} text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4`;
+            }
+
+            // Title
+            const title = document.getElementById('heroTitle');
+            if (title) title.textContent = post.title;
+
+            // Meta
+            const dateEl = document.getElementById('heroDate');
+            if (dateEl && post.published_at) {
+                dateEl.textContent = new Date(post.published_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+            }
+            const rtEl = document.getElementById('heroReadTime');
+            if (rtEl) rtEl.textContent = post.read_minutes || '5';
+            const authorEl = document.getElementById('heroAuthor');
+            if (authorEl) authorEl.textContent = post.author || 'Reflex Holidays Team';
+
+            // Body
+            const body = document.getElementById('articleBody');
+            if (body) {
+                if (post.body && post.body.trim() && post.body !== 'Full article content goes here.') {
+                    body.innerHTML = post.body;
+                } else {
+                    // Fallback: show excerpt as intro paragraph
+                    body.innerHTML = `<p class="lead">${post.excerpt || ''}</p><p class="text-gray-400 italic">Full article coming soon.</p>`;
+                }
+            }
+
+            // Share links
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(post.title + ' — Reflex Holidays Kashmir Journal');
+            const waLink = document.getElementById('shareWA');
+            if (waLink) waLink.href = `https://wa.me/?text=${text}%20${url}`;
+            const fbLink = document.getElementById('shareFB');
+            if (fbLink) fbLink.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        }
+
+        async function loadRelated(currentSlug) {
+            try {
+                const r = await fetch(`${API_BASE}/blog`);
+                if (!r.ok) return;
+                const json = await r.json();
+                const posts = (json && Array.isArray(json.data)) ? json.data : json;
+                const others = posts.filter(p => p.slug !== currentSlug).slice(0, 3);
+                const container = document.getElementById('relatedPosts');
+                if (!container || !others.length) return;
+                container.innerHTML = others.map(p => {
+                    const catColor = p.category_color || 'bg-amber-500';
+                    const date = p.published_at
+                        ? new Date(p.published_at).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })
+                        : '';
+                    return `<a href="blog.html?slug=${p.slug}" class="related-card flex gap-3 items-start group">
+                        <div class="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
+                            <img src="${p.image_url || ''}" alt="${p.title}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="${catColor} text-white text-xs font-bold px-2 py-0.5 rounded-full">${p.category || ''}</span>
+                            <p class="text-gray-800 text-sm font-semibold mt-1 leading-snug group-hover:text-amber-500 transition line-clamp-2">${p.title}</p>
+                            <p class="text-gray-400 text-xs mt-1">${date}</p>
+                        </div>
+                    </a>`;
+                }).join('');
+            } catch {}
+        }
+
+        function showError(msg) {
+            document.getElementById('heroTitle').textContent = msg;
+            document.getElementById('heroCategoryBadge').textContent = 'Error';
+            document.getElementById('articleBody').innerHTML = `<div class="text-center py-20">
+                <i class="fas fa-exclamation-circle text-5xl text-amber-300 mb-4"></i>
+                <p class="text-gray-500 text-lg mb-6">${msg}</p>
+                <a href="index.html" class="bg-amber-500 text-white px-8 py-3 rounded-full font-bold hover:bg-amber-600 transition">← Back to Home</a>
+            </div>`;
+        }
+
+        // ── Boot ──────────────────────────────────────────────────────────────────
+        loadPost();
+    </script>
+</body>
+</html>

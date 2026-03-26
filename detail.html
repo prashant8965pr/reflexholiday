@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valley Explorer Package - Reflex Holidays | Kashmir Tours</title>
+    <meta name="description" content="Valley Explorer 7N/8D Kashmir package by Reflex Holidays, Srinagar. Includes Dal Lake houseboat, Gulmarg gondola, Pahalgam, temples & more. Call +91-9797018473.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Hero */
+        .detail-hero {
+            background: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1920&q=80') center/cover no-repeat;
+            min-height: 80vh;
+        }
+        @media (max-width: 640px) {
+            .detail-hero { min-height: 100svh; min-height: 100vh; }
+        }
+
+        /* Navbar */
+        .navbar-scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+        .navbar-scrolled .nav-link { color: #1f2937 !important; }
+        .navbar-scrolled .nav-logo { color: #1f2937 !important; }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Tabs */
+        .tab-btn.active {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Sticky sidebar */
+        .sticky-sidebar {
+            position: sticky;
+            top: 88px;
+        }
+        @media (max-width: 1024px) {
+            .sticky-sidebar { position: relative; top: 0; }
+        }
+
+        /* Gallery lightbox */
+        .gallery-thumb {
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .gallery-thumb img {
+            transition: transform 0.4s ease;
+        }
+        .gallery-thumb:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.open {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+
+        /* Timeline dots */
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #f59e0b, #ef4444);
+            position: absolute;
+            left: 6px;
+            top: 18px;
+            bottom: 0;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#f59e0b, #ef4444); border-radius: 10px; }
+
+        /* Fade animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Star rating */
+        .star-fill { color: #f59e0b; }
+        .star-empty { color: #d1d5db; }
+
+        /* Back to Top */
+        #backToTop {
+            transition: all 0.3s ease;
+        }
+
+        /* Badge */
+        .badge-popular {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-amber-500 text-xl sm:text-2xl"></i>
+                    <span class="nav-logo text-lg sm:text-2xl font-bold text-white font-playfair sm:tracking-wide">Reflex Holidays</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link text-white hover:text-amber-400 transition font-medium">Home</a>
+                    <a href="index.html#destinations" class="nav-link text-white hover:text-amber-400 transition font-medium">Destinations</a>
+                    <a href="index.html#packages" class="nav-link text-white hover:text-amber-400 transition font-medium">Packages</a>
+                    <a href="index.html#gallery" class="nav-link text-white hover:text-amber-400 transition font-medium">Gallery</a>
+                    <a href="index.html#testimonials" class="nav-link text-white hover:text-amber-400 transition font-medium">Reviews</a>
+                    <a href="index.html#contact" class="nav-link text-white hover:text-amber-400 transition font-medium">Contact</a>
+                    <a href="#booking" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-semibold transition transform hover:scale-105 shadow-lg">
+                        Book Now
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-[min(288px,85vw)] h-full bg-white z-[60] shadow-2xl overflow-y-auto">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50">
+            <a href="index.html" class="flex items-center space-x-2" onclick="closeMenu()">
+                <i class="fas fa-mountain text-amber-500 text-xl"></i>
+                <span class="text-lg font-bold text-gray-900 font-playfair">Reflex Holidays</span>
+            </a>
+            <button id="closeMobileMenu" class="text-2xl text-gray-500 hover:text-gray-800 transition">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="px-6 py-6 space-y-2">
+            <a href="index.html" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition font-medium">
+                <i class="fas fa-home w-5 text-amber-500"></i><span>Home</span>
+            </a>
+            <a href="index.html#destinations" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition font-medium">
+                <i class="fas fa-map-marked-alt w-5 text-amber-500"></i><span>Destinations</span>
+            </a>
+            <a href="index.html#packages" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition font-medium">
+                <i class="fas fa-suitcase w-5 text-amber-500"></i><span>Packages</span>
+            </a>
+            <a href="index.html#gallery" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition font-medium">
+                <i class="fas fa-images w-5 text-amber-500"></i><span>Gallery</span>
+            </a>
+            <a href="index.html#testimonials" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition font-medium">
+                <i class="fas fa-star w-5 text-amber-500"></i><span>Reviews</span>
+            </a>
+            <a href="index.html#contact" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition font-medium">
+                <i class="fas fa-envelope w-5 text-amber-500"></i><span>Contact</span>
+            </a>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+                <a href="#booking" class="flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold hover:from-amber-600 hover:to-orange-600 transition shadow-md">
+                    <i class="fas fa-calendar-check"></i><span>Book Now</span>
+                </a>
+                <a href="https://wa.me/919797018473" class="flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition shadow-md">
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp Us</span>
+                </a>
+                <a href="tel:+919797018473" class="flex items-center justify-center space-x-2 border-2 border-amber-500 text-amber-600 px-6 py-3 rounded-full font-bold hover:bg-amber-50 transition">
+                    <i class="fas fa-phone"></i><span>+91-9797018473</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="mobileOverlay" class="fixed inset-0 bg-black/50 z-[55] hidden"></div>
+
+    <!-- Hero Section -->
+    <section class="detail-hero relative flex items-end justify-center pb-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20"></div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 pt-20 sm:pt-28">
+            <!-- Breadcrumb -->
+            <nav class="flex items-center space-x-2 text-white/60 text-sm mb-5">
+                <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="index.html#packages" class="hover:text-amber-400 transition">Packages</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-white">Valley Explorer</span>
+            </nav>
+
+            <!-- Status badges -->
+            <div class="flex flex-wrap gap-3 mb-5">
+                <span class="badge-popular text-white px-4 py-1.5 rounded-full text-sm font-semibold">🔥 Most Popular</span>
+                <span class="bg-white/20 backdrop-blur text-white px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">🏆 Best Seller 2025</span>
+                <span class="bg-green-500/80 backdrop-blur text-white px-4 py-1.5 rounded-full text-sm font-semibold">✅ Govt. Verified</span>
+            </div>
+
+            <!-- Title -->
+            <h1 id="heroTitle" class="text-2xl sm:text-4xl md:text-6xl font-bold text-white font-playfair leading-tight mb-4">
+                Kashmir Valley<br>Explorer Package
+            </h1>
+
+            <!-- Description -->
+            <p class="text-white/80 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed mb-6">
+                7 Nights / 8 Days — The ultimate Kashmir journey covering Srinagar temples, Dal Lake houseboat, Gulmarg gondola, Pahalgam valley, and Sonmarg glacier.
+            </p>
+
+            <!-- Rating + travelers row -->
+            <div class="flex flex-wrap items-center gap-4 mb-6">
+                <div class="flex items-center space-x-2 bg-white/15 backdrop-blur border border-white/25 rounded-full px-4 py-2">
+                    <div class="flex text-amber-400 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-white font-bold text-sm">4.9</span>
+                    <span class="text-white/60 text-xs">/ 5.0 &nbsp;(328 reviews)</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/15 backdrop-blur border border-white/25 rounded-full px-4 py-2">
+                    <i class="fas fa-users text-amber-400 text-sm"></i>
+                    <span class="text-white font-bold text-sm">2,400+</span>
+                    <span class="text-white/60 text-xs">Travelers this year</span>
+                </div>
+            </div>
+
+            <!-- Meta info row -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-4 md:gap-5 text-white/80 text-xs sm:text-sm">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-clock text-amber-400"></i>
+                    <span>7 Nights / 8 Days</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-map-marker-alt text-amber-400"></i>
+                    <span>Srinagar, Gulmarg, Pahalgam, Sonmarg</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-user-friends text-amber-400"></i>
+                    <span>Min. 2 persons</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-language text-amber-400"></i>
+                    <span>Hindi / English Guide</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content + Sidebar -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+
+            <!-- Left: Main Content -->
+            <div class="flex-1 min-w-0">
+
+                <!-- Quick Info Bar -->
+                <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 bg-white rounded-2xl p-3 sm:p-6 shadow-md mb-8">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-calendar-alt text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Duration</p>
+                        <p class="font-bold text-gray-900">7N / 8D</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-map-signs text-blue-500 text-xl"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Destinations</p>
+                        <p class="font-bold text-gray-900">5 Places</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-hotel text-green-500 text-xl"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Accommodation</p>
+                        <p class="font-bold text-gray-900">4★ + Houseboat</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-utensils text-purple-500 text-xl"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Meals</p>
+                        <p class="font-bold text-gray-900">All Included</p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="fade-up flex flex-wrap gap-1 sm:gap-2 mb-6 sm:mb-8 bg-white rounded-2xl p-1.5 sm:p-2 shadow-md overflow-x-auto">
+                    <button class="tab-btn active flex-1 min-w-[72px] sm:min-w-[100px] px-2 sm:px-4 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm border border-transparent transition" data-tab="overview">
+                        <i class="fas fa-info-circle mr-1 sm:mr-2 hidden sm:inline"></i>Overview
+                    </button>
+                    <button class="tab-btn flex-1 min-w-[72px] sm:min-w-[100px] px-2 sm:px-4 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm border border-gray-200 text-gray-600 hover:bg-gray-50 transition" data-tab="itinerary">
+                        <i class="fas fa-route mr-1 sm:mr-2 hidden sm:inline"></i>Itinerary
+                    </button>
+                    <button class="tab-btn flex-1 min-w-[72px] sm:min-w-[100px] px-2 sm:px-4 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm border border-gray-200 text-gray-600 hover:bg-gray-50 transition" data-tab="inclusions">
+                        <i class="fas fa-list-check mr-1 sm:mr-2 hidden sm:inline"></i>Inclusions
+                    </button>
+                    <button class="tab-btn flex-1 min-w-[72px] sm:min-w-[100px] px-2 sm:px-4 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm border border-gray-200 text-gray-600 hover:bg-gray-50 transition" data-tab="gallery">
+                        <i class="fas fa-images mr-1 sm:mr-2 hidden sm:inline"></i>Gallery
+                    </button>
+                    <button class="tab-btn flex-1 min-w-[72px] sm:min-w-[100px] px-2 sm:px-4 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm border border-gray-200 text-gray-600 hover:bg-gray-50 transition" data-tab="reviews">
+                        <i class="fas fa-star mr-1 sm:mr-2 hidden sm:inline"></i>Reviews
+                    </button>
+                </div>
+
+                <!-- Tab: Overview -->
+                <div id="tab-overview" class="tab-content fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-md mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-4">About This Package</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            The <strong>Kashmir Valley Explorer</strong> is our most comprehensive and beloved package — crafted for travelers who want to experience the full magic of Jammu & Kashmir in one seamless journey. Over 8 days, you'll float on Dal Lake's mystical waters, seek blessings at ancient Hindu temples, ride Asia's highest gondola in Gulmarg, trek through the meadows of Pahalgam, and stand before the Thajiwas glacier in Sonmarg.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Kashmir is not just a destination — it's a spiritual experience. Our expert local guides will take you beyond the tourist trail to discover hidden temples, share stories of Kashmir Shaivism, and introduce you to the warmth of Kashmiri hospitality through authentic wazwan cuisine and chai by the chinar trees.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            This package is ideal for families, couples, and small groups seeking the perfect blend of pilgrimage, nature, and culture. Every detail — from airport pickup to the last shikara ride — is personally managed by our Srinagar-based team.
+                        </p>
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="bg-white rounded-2xl p-8 shadow-md mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-6">Package Highlights</h2>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="flex items-start space-x-3 p-4 bg-amber-50 rounded-xl">
+                                <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-place-of-worship text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Temple Darshan Circuit</h4>
+                                    <p class="text-gray-500 text-sm mt-1">Shankaracharya, Kheer Bhawani, Sharika Devi & Ranbireshwar temples</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-4 bg-blue-50 rounded-xl">
+                                <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-ship text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Dal Lake Houseboat Stay</h4>
+                                    <p class="text-gray-500 text-sm mt-1">2 nights on iconic Dal Lake with shikara rides at sunrise & sunset</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-4 bg-green-50 rounded-xl">
+                                <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-cable-car text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Gulmarg Gondola Ride</h4>
+                                    <p class="text-gray-500 text-sm mt-1">Asia's highest cable car (Phase 1 + Phase 2) with Himalayan panorama</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-4 bg-purple-50 rounded-xl">
+                                <div class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-mountain text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Pahalgam Valley Trek</h4>
+                                    <p class="text-gray-500 text-sm mt-1">Betaab Valley, Aru, Baisaran meadow & Mamleshwar Shiva Temple</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-4 bg-orange-50 rounded-xl">
+                                <div class="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-snowflake text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Sonmarg Glacier Visit</h4>
+                                    <p class="text-gray-500 text-sm mt-1">Thajiwas Glacier trek & the golden meadows of Sonmarg valley</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-4 bg-red-50 rounded-xl">
+                                <div class="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-utensils text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Authentic Wazwan Dinner</h4>
+                                    <p class="text-gray-500 text-sm mt-1">Traditional Kashmiri multi-course feast with Rogan Josh, Gushtaba & Kehwa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Section -->
+                    <div class="bg-white rounded-2xl p-8 shadow-md mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-6">Tour Route Map</h2>
+                        <div class="bg-gray-100 rounded-xl h-64 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt text-5xl text-amber-500 mb-4"></i>
+                                <p class="text-gray-600 font-semibold">Srinagar → Gulmarg → Pahalgam → Sonmarg → Srinagar</p>
+                                <p class="text-gray-400 text-sm mt-2">Total distance: ~350 km circular route</p>
+                            </div>
+                        </div>
+                        <!-- Route stops -->
+                        <div class="flex flex-wrap justify-between mt-6 gap-3">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                <span class="text-gray-600 text-sm font-medium">Srinagar (Day 1-2)</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-300 hidden md:block"></i>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                                <span class="text-gray-600 text-sm font-medium">Gulmarg (Day 3)</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-300 hidden md:block"></i>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="text-gray-600 text-sm font-medium">Pahalgam (Day 4-5)</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-300 hidden md:block"></i>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                                <span class="text-gray-600 text-sm font-medium">Sonmarg (Day 6)</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-300 hidden md:block"></i>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <span class="text-gray-600 text-sm font-medium">Srinagar (Day 7-8)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Itinerary -->
+                <div id="tab-itinerary" class="tab-content hidden fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-md">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-8">Day-by-Day Itinerary</h2>
+
+                        <div id="itineraryDays" class="space-y-0">
+                            <!-- Day 1 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">1</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-amber-50 rounded-2xl p-6 border border-amber-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Arrival in Srinagar + Dal Lake</h3>
+                                            <span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 1</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-plane-arrival text-amber-500 mr-2 w-4"></i>Arrive at Srinagar Airport — airport pickup by our representative</p>
+                                            <p><i class="fas fa-hotel text-amber-500 mr-2 w-4"></i>Check-in to iconic Dal Lake houseboat (Deluxe category)</p>
+                                            <p><i class="fas fa-ship text-amber-500 mr-2 w-4"></i>Evening shikara ride — floating vegetable market, lotus gardens</p>
+                                            <p><i class="fas fa-utensils text-amber-500 mr-2 w-4"></i>Welcome dinner: Traditional Kashmiri Wazwan with live music</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-amber-200 text-amber-700 px-3 py-1 rounded-full">🛏 Houseboat</span>
+                                            <span class="text-xs bg-white border border-amber-200 text-amber-700 px-3 py-1 rounded-full">🍽 Dinner Included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 2 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">2</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Srinagar Temple Circuit</h3>
+                                            <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 2</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-sun text-blue-500 mr-2 w-4"></i>Sunrise shikara ride on Dal Lake (6:30 AM)</p>
+                                            <p><i class="fas fa-place-of-worship text-blue-500 mr-2 w-4"></i>Shankaracharya Temple — hilltop darshan with panoramic views</p>
+                                            <p><i class="fas fa-place-of-worship text-blue-500 mr-2 w-4"></i>Sharika Devi Temple at Hari Parbat & Ranbireshwar Temple (12 Jyotirlingas)</p>
+                                            <p><i class="fas fa-place-of-worship text-blue-500 mr-2 w-4"></i>Jyeshtha Devi Temple — ancient wooden shrine by water</p>
+                                            <p><i class="fas fa-mosque text-blue-500 mr-2 w-4"></i>Hazratbal Shrine — Kashmir's most revered mosque</p>
+                                            <p><i class="fas fa-leaf text-blue-500 mr-2 w-4"></i>Evening: Mughal Gardens — Shalimar Bagh & Nishat Bagh</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-blue-200 text-blue-700 px-3 py-1 rounded-full">🛏 Houseboat</span>
+                                            <span class="text-xs bg-white border border-blue-200 text-blue-700 px-3 py-1 rounded-full">🍽 Breakfast + Dinner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 3 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">3</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Gulmarg — Asia's Highest Gondola</h3>
+                                            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 3</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-car text-green-500 mr-2 w-4"></i>Drive from Srinagar to Gulmarg (~55 km, scenic route)</p>
+                                            <p><i class="fas fa-cable-car text-green-500 mr-2 w-4"></i>Gulmarg Gondola Phase 1 — ride to Kongdori (2,650m)</p>
+                                            <p><i class="fas fa-cable-car text-green-500 mr-2 w-4"></i>Gulmarg Gondola Phase 2 — ride to Apharwat Peak (3,979m)</p>
+                                            <p><i class="fas fa-snowflake text-green-500 mr-2 w-4"></i>Snow activities: skiing / snowboarding / snow walk</p>
+                                            <p><i class="fas fa-mosque text-green-500 mr-2 w-4"></i>Baba Reshi Shrine visit on the way back</p>
+                                            <p><i class="fas fa-hotel text-green-500 mr-2 w-4"></i>Check-in to hotel in Gulmarg</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-green-200 text-green-700 px-3 py-1 rounded-full">🛏 Gulmarg Hotel</span>
+                                            <span class="text-xs bg-white border border-green-200 text-green-700 px-3 py-1 rounded-full">🍽 All Meals</span>
+                                            <span class="text-xs bg-white border border-green-200 text-green-700 px-3 py-1 rounded-full">🚡 Gondola Included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 4 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">4</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-purple-50 rounded-2xl p-6 border border-purple-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Pahalgam — Valley of Shepherds</h3>
+                                            <span class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 4</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-car text-purple-500 mr-2 w-4"></i>Drive from Gulmarg to Pahalgam via Awantipora (~120 km)</p>
+                                            <p><i class="fas fa-archway text-purple-500 mr-2 w-4"></i>Awantiswami Temple stop (9th century, ASI protected)</p>
+                                            <p><i class="fas fa-water text-purple-500 mr-2 w-4"></i>Betaab Valley — lush meadows by Lidder River (bollywood filming location)</p>
+                                            <p><i class="fas fa-place-of-worship text-purple-500 mr-2 w-4"></i>Mamleshwar Shiva Temple — ancient shrine on river bank</p>
+                                            <p><i class="fas fa-horse text-purple-500 mr-2 w-4"></i>Local market stroll — Pahalgam bazaar</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-purple-200 text-purple-700 px-3 py-1 rounded-full">🛏 Pahalgam Hotel</span>
+                                            <span class="text-xs bg-white border border-purple-200 text-purple-700 px-3 py-1 rounded-full">🍽 All Meals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 5 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">5</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-red-50 rounded-2xl p-6 border border-red-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Aru Valley + Baisaran Meadow</h3>
+                                            <span class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 5</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-hiking text-red-500 mr-2 w-4"></i>Morning trek to Aru Valley — alpine meadows and Himalayan peaks</p>
+                                            <p><i class="fas fa-mountain text-red-500 mr-2 w-4"></i>Baisaran meadow — "Mini Switzerland of India" by pony</p>
+                                            <p><i class="fas fa-water text-red-500 mr-2 w-4"></i>Chandanwari — starting point of Amarnath Yatra pilgrimage route</p>
+                                            <p><i class="fas fa-fish text-red-500 mr-2 w-4"></i>Evening: Trout fishing in Lidder River (optional)</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-red-200 text-red-700 px-3 py-1 rounded-full">🛏 Pahalgam Hotel</span>
+                                            <span class="text-xs bg-white border border-red-200 text-red-700 px-3 py-1 rounded-full">🍽 All Meals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 6 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">6</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-teal-50 rounded-2xl p-6 border border-teal-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Sonmarg — Meadow of Gold</h3>
+                                            <span class="text-xs bg-teal-100 text-teal-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 6</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-car text-teal-500 mr-2 w-4"></i>Drive Pahalgam → Srinagar → Sonmarg (~100 km)</p>
+                                            <p><i class="fas fa-snowflake text-teal-500 mr-2 w-4"></i>Thajiwas Glacier trek (by pony / on foot)</p>
+                                            <p><i class="fas fa-binoculars text-teal-500 mr-2 w-4"></i>Glacier panorama walk — turquoise streams and wildflowers</p>
+                                            <p><i class="fas fa-fish text-teal-500 mr-2 w-4"></i>Sindh River trout fishing (seasonal)</p>
+                                            <p><i class="fas fa-hotel text-teal-500 mr-2 w-4"></i>Back to Srinagar — hotel check-in</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-teal-200 text-teal-700 px-3 py-1 rounded-full">🛏 Srinagar Hotel</span>
+                                            <span class="text-xs bg-white border border-teal-200 text-teal-700 px-3 py-1 rounded-full">🍽 All Meals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 7 -->
+                            <div class="flex gap-5 pb-8 relative">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">7</div>
+                                    <div class="w-0.5 flex-1 bg-gradient-to-b from-amber-400 to-orange-400 mt-2"></div>
+                                </div>
+                                <div class="flex-1 pb-2">
+                                    <div class="bg-orange-50 rounded-2xl p-6 border border-orange-100">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Kheer Bhawani + South Kashmir Heritage</h3>
+                                            <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day 7</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-place-of-worship text-orange-500 mr-2 w-4"></i>Kheer Bhawani Temple — mystical spring & Kashmiri Pandit culture</p>
+                                            <p><i class="fas fa-archway text-orange-500 mr-2 w-4"></i>Martand Sun Temple ruins (7th century, Anantnag)</p>
+                                            <p><i class="fas fa-water text-orange-500 mr-2 w-4"></i>Mattan sacred pond & Siddheshwar Temple</p>
+                                            <p><i class="fas fa-shopping-bag text-orange-500 mr-2 w-4"></i>Srinagar shopping — Pashmina shawls, saffron, dry fruits, carpets</p>
+                                            <p><i class="fas fa-glass-cheers text-orange-500 mr-2 w-4"></i>Farewell dinner with Kehwa tea ceremony</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-orange-200 text-orange-700 px-3 py-1 rounded-full">🛏 Srinagar Hotel</span>
+                                            <span class="text-xs bg-white border border-orange-200 text-orange-700 px-3 py-1 rounded-full">🍽 All Meals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 8 -->
+                            <div class="flex gap-5">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">8</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <h3 class="text-lg font-bold text-gray-900">Departure Day</h3>
+                                            <span class="text-xs bg-gray-200 text-gray-600 px-3 py-1 rounded-full font-medium ml-4">Day 8</span>
+                                        </div>
+                                        <div class="space-y-2 text-gray-600 text-sm">
+                                            <p><i class="fas fa-coffee text-gray-400 mr-2 w-4"></i>Breakfast at hotel — last Kashmiri Kahwa tea</p>
+                                            <p><i class="fas fa-car text-gray-400 mr-2 w-4"></i>Hotel checkout & transfer to Srinagar Airport</p>
+                                            <p><i class="fas fa-plane-departure text-gray-400 mr-2 w-4"></i>Departure — with memories of paradise to last a lifetime</p>
+                                        </div>
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            <span class="text-xs bg-white border border-gray-200 text-gray-600 px-3 py-1 rounded-full">🍽 Breakfast Only</span>
+                                            <span class="text-xs bg-white border border-gray-200 text-gray-600 px-3 py-1 rounded-full">🚗 Drop Included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Inclusions -->
+                <div id="tab-inclusions" class="tab-content hidden fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-md mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-8">What's Included & Excluded</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Included -->
+                            <div>
+                                <h3 class="text-lg font-bold text-green-600 mb-5 flex items-center">
+                                    <i class="fas fa-circle-check mr-3"></i>Included in Package
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">7 nights accommodation (2N houseboat + 1N Gulmarg + 2N Pahalgam + 2N Srinagar hotel)</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">All meals — breakfast, lunch & dinner (Day 1 dinner to Day 8 breakfast)</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">Airport pick-up and drop-off (Srinagar Airport)</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">All inter-city transfers by private AC vehicle</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">Gulmarg Gondola Phase 1 & Phase 2 tickets</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">Shikara ride on Dal Lake (1 hour morning + 1 hour sunset)</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">English/Hindi-speaking local guide throughout the tour</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">All temple entry fees and monument entry fees</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">Wazwan farewell dinner with Kehwa tea ceremony</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">All applicable taxes and GST</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-600">24/7 on-trip local support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Excluded -->
+                            <div>
+                                <h3 class="text-lg font-bold text-red-500 mb-5 flex items-center">
+                                    <i class="fas fa-circle-xmark mr-3"></i>Not Included
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Airfare to/from Srinagar</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Travel insurance (recommended — we can arrange on request)</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Personal expenses, shopping, tips & gratuities</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Optional adventure activities (horse riding, ATV, river rafting)</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Any extra meals / beverages outside the itinerary</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Costs due to natural disasters, political unrest, or force majeure</span>
+                                    </li>
+                                    <li class="flex items-start space-x-3">
+                                        <i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i>
+                                        <span class="text-gray-500">Amarnath Yatra registration fees (if applicable)</span>
+                                    </li>
+                                </ul>
+
+                                <div class="mt-8 p-5 bg-amber-50 rounded-xl border border-amber-200">
+                                    <h4 class="font-bold text-amber-700 mb-3">
+                                        <i class="fas fa-info-circle mr-2"></i>Important Notes
+                                    </h4>
+                                    <ul class="space-y-2 text-amber-700 text-sm">
+                                        <li>• Best season: June–September & March–May</li>
+                                        <li>• Carry government-issued ID (Aadhaar/Passport)</li>
+                                        <li>• Light woolens required even in summer months</li>
+                                        <li>• Free cancellation up to 7 days before departure</li>
+                                        <li>• 50% advance at booking; balance 48 hrs before departure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Gallery -->
+                <div id="tab-gallery" class="tab-content hidden fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-md">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-8">Photo Gallery</h2>
+                        <div id="detailGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=80" class="w-full h-full object-cover" alt="Dal Lake">
+                                <div class="absolute inset-0 bg-black/0 hover:bg-black/30 transition flex items-center justify-center">
+                                    <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition"></i>
+                                </div>
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Dal Lake</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1670742175360-12e659bca22e?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1670742175360-12e659bca22e?w=600&q=80" class="w-full h-full object-cover" alt="Gulmarg">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Gulmarg</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1686037747471-aba244e386ef?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1686037747471-aba244e386ef?w=600&q=80" class="w-full h-full object-cover" alt="Kashmir Valley">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Kashmir Valley</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1562857384-2408c5cd017b?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1562857384-2408c5cd017b?w=600&q=80" class="w-full h-full object-cover" alt="Hazratbal Shrine Srinagar">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Srinagar Shrine</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" class="w-full h-full object-cover" alt="Martand Temple">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Martand Sun Temple</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1590998012650-33f0dfe40269?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1590998012650-33f0dfe40269?w=600&q=80" class="w-full h-full object-cover" alt="Kashmir Tulip Garden">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Kashmir Tulip Garden</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1694368906722-49decee647be?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1694368906722-49decee647be?w=600&q=80" class="w-full h-full object-cover" alt="Meadow">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Pahalgam Meadow</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1649630182802-cb4082f67028?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1649630182802-cb4082f67028?w=600&q=80" class="w-full h-full object-cover" alt="Tulip Garden">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Tulip Garden</p>
+                            </div>
+                            <div class="gallery-thumb h-48 relative" onclick="openLightbox('https://images.unsplash.com/photo-1665326574969-9bb97f8bb4ef?w=1200&q=90')">
+                                <img src="https://images.unsplash.com/photo-1665326574969-9bb97f8bb4ef?w=600&q=80" class="w-full h-full object-cover" alt="Shikara Boat Dal Lake">
+                                <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">Shikara on Dal Lake</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Reviews -->
+                <div id="tab-reviews" class="tab-content hidden fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-md mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-6">Traveler Reviews</h2>
+
+                        <!-- Rating Summary -->
+                        <div class="flex flex-col md:flex-row gap-8 p-6 bg-amber-50 rounded-2xl mb-8">
+                            <div class="text-center">
+                                <p class="text-6xl font-bold text-amber-500">4.9</p>
+                                <div class="flex justify-center gap-1 my-2">
+                                    <i class="fas fa-star star-fill"></i><i class="fas fa-star star-fill"></i><i class="fas fa-star star-fill"></i><i class="fas fa-star star-fill"></i><i class="fas fa-star star-fill"></i>
+                                </div>
+                                <p class="text-gray-500 text-sm">328 reviews</p>
+                            </div>
+                            <div class="flex-1 space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm text-gray-600 w-16">5 stars</span>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-amber-500 h-2.5 rounded-full" style="width: 84%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-500 w-10">84%</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm text-gray-600 w-16">4 stars</span>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-amber-400 h-2.5 rounded-full" style="width: 12%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-500 w-10">12%</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm text-gray-600 w-16">3 stars</span>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-amber-300 h-2.5 rounded-full" style="width: 3%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-500 w-10">3%</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm text-gray-600 w-16">2 stars</span>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-gray-300 h-2.5 rounded-full" style="width: 1%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-500 w-10">1%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Individual Reviews -->
+                        <div id="reviewsList" class="space-y-6">
+                            <div class="border-b border-gray-100 pb-6">
+                                <div class="flex items-start gap-4">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full flex-shrink-0" alt="Reviewer">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                                            <div>
+                                                <p class="font-bold text-gray-900">Priya Sharma</p>
+                                                <p class="text-gray-400 text-xs">Delhi, India • Oct 2024</p>
+                                            </div>
+                                            <div class="flex text-amber-400 text-sm">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-800 mb-2">"The most beautiful journey of my life"</h4>
+                                        <p class="text-gray-600 text-sm leading-relaxed">The Shankaracharya Temple at sunrise left me speechless. The houseboat on Dal Lake was magical — waking up to morning mist and a cup of Kashmiri Kahwa is something I'll never forget. Our guide Imran was incredibly knowledgeable about temple history. Already planning a return trip!</p>
+                                        <div class="flex gap-2 mt-3">
+                                            <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">Temple Circuit</span>
+                                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Dal Lake</span>
+                                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Family Trip</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-gray-100 pb-6">
+                                <div class="flex items-start gap-4">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full flex-shrink-0" alt="Reviewer">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                                            <div>
+                                                <p class="font-bold text-gray-900">Arjun & Meera Nair</p>
+                                                <p class="text-gray-400 text-xs">Bangalore, India • Sep 2024</p>
+                                            </div>
+                                            <div class="flex text-amber-400 text-sm">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-800 mb-2">"Perfect honeymoon — we're already planning to return!"</h4>
+                                        <p class="text-gray-600 text-sm leading-relaxed">Our honeymoon exceeded every expectation. From the shikara decorated with flowers for us, to the private sunset arrangement at Dal Lake — every detail showed genuine care. Gulmarg gondola with fresh snow was surreal. The guide spoke English fluently and made us feel like local royalty. 10/10.</p>
+                                        <div class="flex gap-2 mt-3">
+                                            <span class="text-xs bg-pink-100 text-pink-700 px-2 py-1 rounded-full">Honeymoon</span>
+                                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Gulmarg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-gray-100 pb-6">
+                                <div class="flex items-start gap-4">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full flex-shrink-0" alt="Reviewer">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                                            <div>
+                                                <p class="font-bold text-gray-900">Dr. Rajiv Menon</p>
+                                                <p class="text-gray-400 text-xs">Chennai, India • Nov 2024</p>
+                                            </div>
+                                            <div class="flex text-amber-400 text-sm">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-800 mb-2">"Martand Sun Temple blew my mind — a must for history lovers"</h4>
+                                        <p class="text-gray-600 text-sm leading-relaxed">As a history professor I was blown away by the Martand Sun Temple. The guide's depth of knowledge on Lalitaditya's reign was remarkable. Only minor issue was one hotel room was slightly small — hence 4.5 stars. But the overall experience, food, and temples circuit was outstanding. Highly recommended for serious travelers.</p>
+                                        <div class="flex gap-2 mt-3">
+                                            <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">Heritage Sites</span>
+                                            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Solo Travel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-start gap-4">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full flex-shrink-0" alt="Reviewer">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                                            <div>
+                                                <p class="font-bold text-gray-900">Sunita Agarwal & Family</p>
+                                                <p class="text-gray-400 text-xs">Mumbai, India • Dec 2024</p>
+                                            </div>
+                                            <div class="flex text-amber-400 text-sm">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <h4 class="font-semibold text-gray-800 mb-2">"Kheer Bhawani was a spiritual miracle — brought our whole family to tears"</h4>
+                                        <p class="text-gray-600 text-sm leading-relaxed">We went as a family of 7 including elderly parents. The team arranged everything seamlessly — pony rides for the elders at Baisaran meadow, wheelchairs at airport, flexible meal timing for the kids. Kheer Bhawani temple was a profoundly moving experience for the whole family. Reflex Holidays is a team with a heart. Jai Mata Di!</p>
+                                        <div class="flex gap-2 mt-3">
+                                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Family Trip</span>
+                                            <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Pilgrimage</span>
+                                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Senior-Friendly</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right: Sticky Booking Sidebar -->
+            <div class="lg:w-96 flex-shrink-0">
+                <div class="sticky-sidebar" id="booking">
+
+                    <!-- Price Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 mb-6 border border-amber-100">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm line-through">₹19,999</p>
+                                <p class="text-4xl font-bold text-amber-500">₹14,999</p>
+                                <p class="text-gray-500 text-sm">per person</p>
+                            </div>
+                            <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">
+                                Save 25%
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-100 pt-4 mb-6 space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-clock text-amber-500 mr-2 w-4"></i>Duration</span>
+                                <span class="font-semibold text-gray-700">7 Nights / 8 Days</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-users text-amber-500 mr-2 w-4"></i>Group Size</span>
+                                <span class="font-semibold text-gray-700">Min 2 – Max 15</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-calendar text-amber-500 mr-2 w-4"></i>Availability</span>
+                                <span class="font-semibold text-green-600">Open Year Round</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-ban text-amber-500 mr-2 w-4"></i>Cancellation</span>
+                                <span class="font-semibold text-gray-700">Free (7 days)</span>
+                            </div>
+                        </div>
+
+                        <!-- Booking Form -->
+                        <form id="bookingForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Travel Date</label>
+                                <input type="date" name="travel_date" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Number of Travelers</label>
+                                <select name="travelers" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition text-sm">
+                                    <option>2 Adults</option>
+                                    <option>3 Adults</option>
+                                    <option>4 Adults</option>
+                                    <option>Family (2 Adults + 2 Kids)</option>
+                                    <option>Group (5+)</option>
+                                    <option>Group (10+)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
+                                <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" name="phone" placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition text-sm">
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white py-4 rounded-xl font-bold hover:from-amber-600 hover:to-orange-600 transition transform hover:scale-[1.02] shadow-lg text-sm">
+                                <i class="fas fa-paper-plane mr-2"></i>Book This Package
+                            </button>
+                        </form>
+
+                        <div class="mt-4 flex items-center justify-center space-x-2 text-gray-400 text-xs">
+                            <i class="fas fa-lock text-green-500"></i>
+                            <span>Secure booking — No hidden charges</span>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/919797018473" target="_blank" class="flex items-center justify-center gap-3 w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-2xl font-bold transition shadow-lg mb-6">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        Chat on WhatsApp
+                    </a>
+
+                    <!-- Trust Badges -->
+                    <div class="bg-white rounded-2xl p-5 shadow-md">
+                        <h4 class="font-bold text-gray-700 text-sm mb-4 text-center">Why Book With Us</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-certificate text-green-500 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 text-xs font-bold">Reg. No: JKTA00004897</p>
+                                    <p class="text-gray-400 text-xs">J&K Tourism Certified</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-file-invoice text-blue-500 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 text-xs font-bold">GST: 01AQFPH6523G1ZC</p>
+                                    <p class="text-gray-400 text-xs">GST Registered Business</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-star text-amber-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-600 text-sm">4.9/5 — 328 Verified Reviews</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-headset text-purple-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-600 text-sm">24/7 Local Kashmir Support</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-rotate-left text-orange-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-600 text-sm">Free Cancellation (7 days)</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <a href="tel:+919797018473" class="text-amber-600 font-bold text-sm hover:text-amber-700 transition">
+                                <i class="fas fa-phone mr-1"></i>+91-9797018473
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Related Tours -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 font-playfair">You Might Also Like</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div id="relatedToursGrid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                <!-- Related 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group cursor-pointer" onclick="window.location='detail.html?slug=temple-circuit'">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1562857384-2408c5cd017b?w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Temple Circuit">
+                        <div class="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">Temple Tour</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-900 mb-1 group-hover:text-amber-500 transition">Kashmir Temple Circuit</h3>
+                        <p class="text-gray-500 text-xs mb-3">6 Nights / 7 Days</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-amber-500">₹7,999 <span class="text-sm text-gray-400 font-normal">/person</span></span>
+                            <span class="text-xs bg-amber-50 text-amber-600 px-2 py-1 rounded-full">⭐ 4.8</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group cursor-pointer" onclick="window.location='detail.html?slug=valley-explorer'">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1670742175360-12e659bca22e?w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Gulmarg">
+                        <div class="absolute top-3 left-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">Adventure</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-900 mb-1 group-hover:text-amber-500 transition">Gulmarg Snow Adventure</h3>
+                        <p class="text-gray-500 text-xs mb-3">3 Nights / 4 Days</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-amber-500">₹6,499 <span class="text-sm text-gray-400 font-normal">/person</span></span>
+                            <span class="text-xs bg-amber-50 text-amber-600 px-2 py-1 rounded-full">⭐ 4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group cursor-pointer" onclick="window.location='detail.html?slug=royal-kashmir'">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Royal Kashmir">
+                        <div class="absolute top-3 left-3 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold">Luxury</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-900 mb-1 group-hover:text-amber-500 transition">Royal Kashmir (Luxury)</h3>
+                        <p class="text-gray-500 text-xs mb-3">10 Nights / 11 Days</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-amber-500">₹29,999 <span class="text-sm text-gray-400 font-normal">/person</span></span>
+                            <span class="text-xs bg-amber-50 text-amber-600 px-2 py-1 rounded-full">⭐ 5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 md:gap-10 mb-8 md:mb-10">
+                <!-- Brand + Contact -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mountain text-amber-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white font-playfair">Reflex Holidays</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p><i class="fas fa-map-marker-alt text-amber-500 mr-2"></i>2nd Floor, Khaliq Complex, Solina,<br><span class="ml-6">Elachi Bagh, Srinagar (J&K) – 190009</span></p>
+                        <p><i class="fas fa-phone text-amber-500 mr-2"></i><a href="tel:+919797018473" class="hover:text-amber-400 transition">+91-9797018473</a> | <a href="tel:+919596123334" class="hover:text-amber-400 transition">+91-9596123334</a></p>
+                        <p><i class="fas fa-envelope text-amber-500 mr-2"></i><a href="mailto:reflexholidaysbookings@gmail.com" class="hover:text-amber-400 transition">reflexholidaysbookings@gmail.com</a></p>
+                        <p><i class="fas fa-globe text-amber-500 mr-2"></i><a href="https://www.reflexholidays.in" target="_blank" class="hover:text-amber-400 transition">www.reflexholidays.in</a></p>
+                    </div>
+                    <div class="flex space-x-3 mt-5">
+                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center text-white transition text-sm"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-pink-500 rounded-lg flex items-center justify-center text-white transition text-sm"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919797018473" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-green-500 rounded-lg flex items-center justify-center text-white transition text-sm"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-red-500 rounded-lg flex items-center justify-center text-white transition text-sm"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-amber-500 transition">Home</a></li>
+                        <li><a href="index.html#destinations" class="hover:text-amber-500 transition">Destinations</a></li>
+                        <li><a href="index.html#packages" class="hover:text-amber-500 transition">Tour Packages</a></li>
+                        <li><a href="index.html#gallery" class="hover:text-amber-500 transition">Gallery</a></li>
+                        <li><a href="index.html#contact" class="hover:text-amber-500 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-amber-500 transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- License Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">License & Verification</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3 bg-white/5 rounded-xl p-3">
+                            <i class="fas fa-certificate text-amber-500 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-white font-semibold text-xs">J&K Tourism Registration</p>
+                                <p class="text-gray-400 text-xs mt-0.5">Reg. No: JKTA00004897</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 rounded-xl p-3">
+                            <i class="fas fa-file-invoice text-amber-500 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-white font-semibold text-xs">GST Registration</p>
+                                <p class="text-gray-400 text-xs mt-0.5">GST IN: 01AQFPH6523G1ZC</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 rounded-xl p-3">
+                            <i class="fas fa-shield-alt text-amber-500 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-white font-semibold text-xs">Verified Operator</p>
+                                <p class="text-gray-400 text-xs mt-0.5">Govt. Registered Tour Operator, J&K</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-gray-500 text-xs">&copy; 2025 Reflex Holidays. All rights reserved.</p>
+                <p class="text-gray-600 text-xs">Reg: JKTA00004897 &nbsp;|&nbsp; GST: 01AQFPH6523G1ZC</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp + Call Buttons -->
+    <div class="fixed bottom-4 sm:bottom-8 left-3 sm:left-4 z-50 flex flex-col gap-2 sm:gap-3">
+        <a href="https://wa.me/919797018473" target="_blank"
+           class="w-12 h-12 sm:w-14 sm:h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl flex items-center justify-center transition hover:scale-110 group relative">
+            <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
+            <span class="absolute left-14 sm:left-16 bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat on WhatsApp</span>
+        </a>
+        <a href="tel:+919797018473"
+           class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-full shadow-2xl flex items-center justify-center transition hover:scale-110 group relative">
+            <i class="fas fa-phone text-lg sm:text-xl"></i>
+            <span class="absolute left-14 sm:left-16 bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none">+91-9797018473</span>
+        </a>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full shadow-2xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110 z-50">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl z-10 hover:text-amber-400 transition">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="Gallery Image">
+    </div>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 80);
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            mobileOverlay.classList.remove('hidden');
+        });
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            mobileOverlay.classList.add('hidden');
+        }
+        closeMobileMenu.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
+        // Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-tab');
+
+                tabBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('border-gray-200', 'text-gray-600');
+                    b.classList.remove('border-transparent');
+                });
+                btn.classList.add('active');
+                btn.classList.remove('border-gray-200', 'text-gray-600');
+
+                tabContents.forEach(c => c.classList.add('hidden'));
+                const targetEl = document.getElementById('tab-' + target);
+                targetEl.classList.remove('hidden');
+                setTimeout(() => targetEl.classList.add('visible'), 50);
+            });
+        });
+
+        // Fade-up on scroll
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        fadeEls.forEach(el => observer.observe(el));
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('opacity-0', window.scrollY <= 500);
+            backToTop.classList.toggle('invisible', window.scrollY <= 500);
+            backToTop.classList.toggle('opacity-100', window.scrollY > 500);
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                e.preventDefault();
+                const t = document.querySelector(href);
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ── API Integration ───────────────────────────────────────────────────────
+        const API_BASE = (() => {
+            const h = window.location.hostname;
+            if (h === 'localhost' || h === '127.0.0.1') return 'http://localhost:8000/api';
+            // ← REPLACE with your Railway/Render backend URL after deploy
+            return 'https://reflexholidays-production.up.railway.app/api';
+        })();
+
+        const pkgSlug = new URLSearchParams(window.location.search).get('slug') || 'valley-explorer';
+
+        async function apiGet(path) {
+            try {
+                const r = await fetch(API_BASE + path);
+                if (!r.ok) return null;
+                const json = await r.json();
+                return (json && Array.isArray(json.data)) ? json.data : json;
+            } catch { return null; }
+        }
+
+        async function loadPackageDetail() {
+            try {
+                const r = await fetch(`${API_BASE}/packages/${pkgSlug}`);
+                if (!r.ok) return;
+                const pkg = await r.json();
+                applyPackageData(pkg);
+            } catch {}
+        }
+
+        function applyPackageData(pkg) {
+            // Page title + meta
+            document.title = `${pkg.name} - Reflex Holidays | Kashmir Tours`;
+
+            // Hero background image
+            if (pkg.hero_image_url) {
+                document.querySelector('.detail-hero').style.backgroundImage = `url('${pkg.hero_image_url}')`;
+            }
+
+            // Breadcrumb name
+            const bcName = document.querySelector('nav.flex span.text-white');
+            if (bcName) bcName.textContent = pkg.name;
+
+            // Hero title
+            const ht = document.getElementById('heroTitle');
+            if (ht) ht.textContent = pkg.name;
+
+            // Hero description
+            const heroDesc = document.querySelector('.detail-hero p.text-white\\/80');
+            if (heroDesc) heroDesc.textContent = `${pkg.nights} Nights / ${pkg.days} Days — ${pkg.tagline || ''}`;
+
+            // Rating pill
+            const ratingNum = document.querySelector('.detail-hero .text-white.font-bold.text-sm');
+            if (ratingNum) ratingNum.textContent = pkg.rating;
+            const ratingSub = document.querySelector('.detail-hero .text-white\\/60.text-xs');
+            if (ratingSub) ratingSub.textContent = `/ 5.0 \u00a0(${pkg.review_count} reviews)`;
+
+            // Travelers count
+            const travelersNum = document.querySelector('.detail-hero .fas.fa-users + span, .detail-hero [class*="font-bold"][class*="text-sm"]');
+            const travSpans = document.querySelectorAll('.detail-hero .bg-white\\/15 span.text-white.font-bold.text-sm');
+            if (travSpans.length >= 2) {
+                travSpans[0].textContent = pkg.rating;
+                travSpans[1].textContent = pkg.travelers_count || '2,400+';
+            }
+
+            // Meta info row (duration, locations, persons, guide)
+            const metaSpans = document.querySelectorAll('.detail-hero .flex.flex-wrap.items-center.gap-2 span, .detail-hero .flex.flex-wrap.items-center.gap-4 span');
+            if (metaSpans.length >= 4) {
+                metaSpans[0].textContent = `${pkg.nights} Nights / ${pkg.days} Days`;
+                if (pkg.destinations_covered) metaSpans[1].textContent = pkg.destinations_covered;
+                metaSpans[2].textContent = `Min. ${pkg.min_persons} persons`;
+                if (pkg.guide_language) metaSpans[3].textContent = pkg.guide_language;
+            }
+
+            // Quick info bar
+            const qVals = document.querySelectorAll('.grid.grid-cols-2.md\\:grid-cols-4 p.font-bold.text-gray-900');
+            if (qVals.length >= 4) {
+                qVals[0].textContent = `${pkg.nights}N / ${pkg.days}D`;
+                qVals[1].textContent = pkg.destinations_count ? `${pkg.destinations_count} Places` : qVals[1].textContent;
+                if (pkg.accommodation) qVals[2].textContent = pkg.accommodation;
+                if (pkg.meals) qVals[3].textContent = pkg.meals;
+            }
+
+            // Sidebar price
+            const origPriceEl = document.querySelector('#booking .text-gray-400.text-sm.line-through');
+            if (origPriceEl) origPriceEl.textContent = `\u20b9${(pkg.price_original||0).toLocaleString()}`;
+            const priceEl = document.querySelector('#booking .text-4xl.font-bold.text-amber-500');
+            if (priceEl) priceEl.textContent = `\u20b9${(pkg.price||0).toLocaleString()}`;
+
+            // Sidebar discount badge
+            if (pkg.price && pkg.price_original && pkg.price_original > pkg.price) {
+                const disc = Math.round(((pkg.price_original - pkg.price) / pkg.price_original) * 100);
+                const discEl = document.querySelector('#booking .bg-green-100.text-green-700');
+                if (discEl) discEl.textContent = `Save ${disc}%`;
+            }
+
+            // Sidebar details (duration, group size, availability, cancellation)
+            const sideRows = document.querySelectorAll('#booking .border-t.border-gray-100.pt-4 .flex.justify-between');
+            if (sideRows.length >= 4) {
+                const getVal = row => row.querySelector('[class*="font-semibold"]');
+                const d0 = getVal(sideRows[0]); if (d0) d0.textContent = `${pkg.nights} Nights / ${pkg.days} Days`;
+                const d1 = getVal(sideRows[1]); if (d1) d1.textContent = `Min ${pkg.min_persons} \u2013 Max ${pkg.max_persons}`;
+                if (pkg.availability) { const d2 = getVal(sideRows[2]); if (d2) d2.textContent = pkg.availability; }
+                if (pkg.cancellation)  { const d3 = getVal(sideRows[3]); if (d3) d3.textContent = pkg.cancellation;  }
+            }
+
+            // About text (overview tab)
+            if (pkg.about_html) {
+                const aboutBox = document.querySelector('#tab-overview .bg-white.rounded-2xl.p-8.shadow-md:first-child');
+                if (aboutBox) {
+                    const h2 = aboutBox.querySelector('h2');
+                    // Remove all <p> children, keep the heading
+                    aboutBox.querySelectorAll('p').forEach(el => el.remove());
+                    const div = document.createElement('div');
+                    div.className = 'text-gray-600 leading-relaxed';
+                    div.innerHTML = pkg.about_html;
+                    aboutBox.appendChild(div);
+                }
+            }
+
+            // Highlights grid — seed format: {icon, bg_color, card_bg, title, description}
+            if (pkg.highlights && pkg.highlights.length) {
+                const hGrid = document.querySelector('#tab-overview .grid.md\\:grid-cols-2.gap-4');
+                if (hGrid) {
+                    hGrid.innerHTML = pkg.highlights.map(h => `<div class="flex items-start space-x-3 p-4 ${h.card_bg||'bg-amber-50'} rounded-xl">
+                        <div class="w-10 h-10 ${h.bg_color||'bg-amber-500'} rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="${h.icon||'fas fa-star'} text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">${h.title}</h4>
+                            <p class="text-gray-500 text-sm mt-1">${h.description||''}</p>
+                        </div>
+                    </div>`).join('');
+                }
+            }
+
+            // Tour route — seed format: [{label, days, color}]
+            if (pkg.tour_route && pkg.tour_route.length) {
+                // Route description line
+                const routeDesc = document.querySelector('#tab-overview .bg-gray-100.rounded-xl p.text-gray-600.font-semibold');
+                if (routeDesc) routeDesc.textContent = pkg.tour_route.map(s => s.label).join(' → ');
+                // Distance
+                if (pkg.route_distance) {
+                    const routeDist = document.querySelector('#tab-overview .bg-gray-100.rounded-xl p.text-gray-400.text-sm');
+                    if (routeDist) routeDist.textContent = `Total distance: ${pkg.route_distance}`;
+                }
+                // Route stops row
+                const stopsRow = document.querySelector('#tab-overview .flex.flex-wrap.justify-between.mt-6');
+                if (stopsRow) {
+                    stopsRow.innerHTML = pkg.tour_route.map((stop, i) => {
+                        const isLast = i === pkg.tour_route.length - 1;
+                        return `<div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full ${stop.color||'bg-amber-500'}"></div>
+                            <span class="text-gray-600 text-sm font-medium">${stop.label} (${stop.days})</span>
+                        </div>${!isLast ? '<i class="fas fa-arrow-right text-gray-300 hidden md:block"></i>' : ''}`;
+                    }).join('');
+                }
+            }
+
+            // Itinerary tab — seed format: {day, title, color_class, border_class, badge_class, activities:[{icon,text}], stay, meals, extra?}
+            if (pkg.itinerary && pkg.itinerary.length) {
+                const container = document.getElementById('itineraryDays');
+                if (container) {
+                    container.innerHTML = pkg.itinerary.map((day, i) => {
+                        const isLast = i === pkg.itinerary.length - 1;
+                        const colorCls  = day.color_class  || 'bg-amber-50';
+                        const borderCls = day.border_class || 'border-amber-100';
+                        const badgeCls  = day.badge_class  || 'bg-amber-100 text-amber-700';
+                        // Derive gradient color from color_class (e.g. bg-amber-50 → amber)
+                        const gradMatch = colorCls.match(/bg-(\w+)-/);
+                        const gc = gradMatch ? gradMatch[1] : 'amber';
+                        const activities = (day.activities || []).map(a =>
+                            `<p><i class="${a.icon||'fas fa-circle'} text-${gc}-500 mr-2 w-4"></i>${a.text||a}</p>`
+                        ).join('');
+                        const tags = [
+                            day.stay  ? `<span class="text-xs bg-white border border-${gc}-200 text-${gc}-700 px-3 py-1 rounded-full">🏨 ${day.stay}</span>` : '',
+                            day.meals ? `<span class="text-xs bg-white border border-${gc}-200 text-${gc}-700 px-3 py-1 rounded-full">🍽 ${day.meals}</span>` : '',
+                            day.extra ? `<span class="text-xs bg-white border border-${gc}-200 text-${gc}-700 px-3 py-1 rounded-full">✨ ${day.extra}</span>` : '',
+                        ].join('');
+                        const connLine = !isLast ? `<div class="w-0.5 flex-1 bg-gradient-to-b from-${gc}-400 to-${gc}-200 mt-2"></div>` : '';
+                        return `<div class="flex gap-5 ${!isLast?'pb-8':''} relative">
+                            <div class="flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-${gc}-500 to-${gc}-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 z-10">${day.day}</div>
+                                ${connLine}
+                            </div>
+                            <div class="flex-1 ${!isLast?'pb-2':''}">
+                                <div class="${colorCls} rounded-2xl p-6 border ${borderCls}">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-lg font-bold text-gray-900">${day.title}</h3>
+                                        <span class="${badgeCls} text-xs px-3 py-1 rounded-full font-medium whitespace-nowrap ml-4">Day ${day.day}</span>
+                                    </div>
+                                    <div class="space-y-2 text-gray-600 text-sm">${activities}</div>
+                                    ${tags ? `<div class="mt-4 flex flex-wrap gap-2">${tags}</div>` : ''}
+                                </div>
+                            </div>
+                        </div>`;
+                    }).join('');
+                }
+            }
+
+            // Inclusions tab
+            if (pkg.inclusions || pkg.exclusions) {
+                const container = document.getElementById('tab-inclusions');
+                if (container) {
+                    const incHTML = (pkg.inclusions||[]).map(item => `<li class="flex items-start space-x-3"><i class="fas fa-check text-green-500 mt-1 flex-shrink-0"></i><span class="text-gray-600">${item}</span></li>`).join('');
+                    const excHTML = (pkg.exclusions||[]).map(item => `<li class="flex items-start space-x-3"><i class="fas fa-times text-red-400 mt-1 flex-shrink-0"></i><span class="text-gray-600">${item}</span></li>`).join('');
+                    const notesHTML = (pkg.important_notes||[]).map(item => `<li class="flex items-start space-x-3"><i class="fas fa-info-circle text-amber-500 mt-1 flex-shrink-0"></i><span class="text-gray-600">${item}</span></li>`).join('');
+                    container.innerHTML = `
+                        <div class="bg-white rounded-2xl p-8 shadow-md mb-8">
+                            <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-8">What's Included & Excluded</h2>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="text-lg font-bold text-green-600 mb-5 flex items-center"><i class="fas fa-circle-check mr-3"></i>Included in Package</h3>
+                                    <ul class="space-y-3">${incHTML}</ul>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-red-500 mb-5 flex items-center"><i class="fas fa-circle-xmark mr-3"></i>Not Included</h3>
+                                    <ul class="space-y-3">${excHTML}</ul>
+                                </div>
+                            </div>
+                        </div>
+                        ${notesHTML ? `<div class="bg-amber-50 rounded-2xl p-8 shadow-md border border-amber-100">
+                            <h2 class="text-2xl font-bold text-gray-900 font-playfair mb-6"><i class="fas fa-exclamation-circle text-amber-500 mr-3"></i>Important Notes</h2>
+                            <ul class="space-y-3">${notesHTML}</ul>
+                        </div>` : ''}`;
+                }
+            }
+
+            // Gallery tab
+            loadDetailGallery(pkgSlug);
+
+            // Reviews tab
+            loadDetailReviews();
+        }
+
+        async function loadDetailGallery(slug) {
+            try {
+                const r = await fetch(`${API_BASE}/gallery?package_slug=${slug}`);
+                if (!r.ok) return;
+                const json = await r.json();
+                const items = (json && Array.isArray(json.data)) ? json.data : json;
+                if (!items || !items.length) return;
+                const grid = document.getElementById('detailGalleryGrid');
+                if (!grid) return;
+                grid.innerHTML = items.map(img => `<div class="gallery-thumb h-48 relative" onclick="openLightbox('${img.image_url||img.thumb_url}')">
+                    <img src="${img.thumb_url||img.image_url}" alt="${img.alt_text||img.title||'Gallery'}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/0 hover:bg-black/30 transition flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition"></i>
+                    </div>
+                    <p class="absolute bottom-2 left-2 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">${img.title||''}</p>
+                </div>`).join('');
+            } catch {}
+        }
+
+        async function loadDetailReviews() {
+            try {
+                const r = await fetch(`${API_BASE}/testimonials`);
+                if (!r.ok) return;
+                const json = await r.json();
+                const items = (json && Array.isArray(json.data)) ? json.data : json;
+                if (!items || !items.length) return;
+                const list = document.getElementById('reviewsList');
+                if (!list) return;
+                const tagColors = ['amber','blue','green','pink','purple','orange','red'];
+                list.innerHTML = items.map((t, i) => {
+                    const stars = Array.from({length:5}, (_,idx) =>
+                        idx < Math.floor(t.rating) ? 'fas fa-star' :
+                        (idx < t.rating ? 'fas fa-star-half-alt' : 'far fa-star')
+                    );
+                    const tags = Array.isArray(t.tags) ? t.tags : [];
+                    const isLast = i === items.length - 1;
+                    return `<div class="${!isLast?'border-b border-gray-100 pb-6':''}">
+                        <div class="flex items-start gap-4">
+                            <img src="${t.avatar_url||'https://randomuser.me/api/portraits/men/1.jpg'}" class="w-12 h-12 rounded-full flex-shrink-0" alt="${t.name}">
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                                    <div>
+                                        <p class="font-bold text-gray-900">${t.name}</p>
+                                        <p class="text-gray-400 text-xs">${t.location||''} \u2022 ${t.travel_month||''}</p>
+                                    </div>
+                                    <div class="flex text-amber-400 text-sm">${stars.map(s=>`<i class="${s}"></i>`).join('')}</div>
+                                </div>
+                                <h4 class="font-semibold text-gray-800 mb-2">"${t.title||''}"</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">${t.review||''}</p>
+                                ${tags.length ? `<div class="flex flex-wrap gap-2 mt-3">${tags.map((tag,idx)=>`<span class="text-xs bg-${tagColors[idx%tagColors.length]}-100 text-${tagColors[idx%tagColors.length]}-700 px-2 py-1 rounded-full">${tag}</span>`).join('')}</div>` : ''}
+                            </div>
+                        </div>
+                    </div>`;
+                }).join('');
+            } catch {}
+        }
+
+        // Booking form → API
+        document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const orig = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            const fd = new FormData(e.target);
+            try {
+                const r = await fetch(`${API_BASE}/packages/${pkgSlug}/book`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        name:        fd.get('name')        || '',
+                        phone:       fd.get('phone')       || '',
+                        travel_date: fd.get('travel_date') || null,
+                        travelers:   fd.get('travelers')   || null,
+                    })
+                });
+                if (!r.ok) throw new Error();
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i>Booking Received! We\'ll call you.';
+                btn.style.background = 'linear-gradient(to right, #22c55e, #16a34a)';
+                setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
+            } catch {
+                btn.innerHTML = orig;
+                btn.disabled = false;
+                alert('Could not send. Please call us: +91-9797018473');
+            }
+        });
+
+        // Boot
+        loadPackageDetail();
+    </script>
+</body>
+</html>
